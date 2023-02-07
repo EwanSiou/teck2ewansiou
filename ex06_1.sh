@@ -1,13 +1,8 @@
 #!/bin/bash
 
-text=$1
-
-IFS=' '
-
-read -a strarr <<< "$text"
-
-do_opetation() {
-    ./do_op/do_op ${strarr[0]} ${strarr[1]} ${strarr[2]}
+do_operation() {
+  result=$(./do_op $1)
+  echo "$result"
 }
 
-do_opetation
+do_operation "$1"
